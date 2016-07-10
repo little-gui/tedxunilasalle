@@ -1,0 +1,139 @@
+{% extends "base.html" %}
+
+{% block css %}
+<link href="/static/css/home.css" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+<div class="container-fluid">
+    <div id="header">
+        <div class="row">
+            <div class="col-md-6">
+                <img class="img-responsive" src="/static/logo_TEDx.png">
+            </div>
+        </div>
+    </div>
+
+    <div id="menu">
+        <div class="row">
+            <div class="col-md-12">
+                <ul>
+                    <li>
+                        <a href="{% url 'home' %}#inicio">In&iacute;cio</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'home' %}#noticias">Not&iacute;cias</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'home' %}#quemfaz">Quem Faz</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'home' %}#videos">V&iacute;deo</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'home' %}#programacao">Programa&ccedil;&atilde;o</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'home' %}#local">Local</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'home' %}#tedetedx">TED e TEDx</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'home' %}#contato">Contato</a>
+                    </li>
+                    <li>
+                        <a href="#">Blog</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <section id="porque">
+        <div class="row">
+            <div class="col-md-6">
+                <h1>Em Busca dos Porquês</h1>
+            </div>
+            <div class="col-md-6"></div>
+        </div>
+    </section>
+
+    <section id="noticias">
+        <div class="row">
+            <h1>Not&iacute;cias</h1>
+            <div class="col-md-6">
+                <div class="table border">
+                    <div class="col-md-6"></div>
+                    <div class="col-md-6"></div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="col-md-6 smaller">
+                    <div class="border"></div>
+                </div>
+                <div class="col-md-6 smaller">
+                    <div class="border"></div>
+                </div>
+                <div class="col-md-6 smaller">
+                    <div class="border"></div>
+                </div>
+                <div class="col-md-6 smaller">
+                    <div class="border"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="parallax" class="clearfix">
+        <div class="row">
+            <div class="background-image"></div>
+        </div>
+    </section>
+
+    <section id="quemfaz">
+        <div class="row">
+            <h1>Quem Faz</h1>
+            <div class="col-md-12"></div>
+            <p>
+                O TedxUnilasalleCanoas é feito por pessoas curiosas, que buscam os
+                porquês das coisas.
+                <small>
+                    Cristian Westfal - Curador
+                    Tais
+                    Ariel
+                    Pamela
+                    Gabriela
+                </small>
+            </p>
+            <div class="col-md-12"></div>
+        </div>
+    </section>
+
+    <div class="container">
+        <section>
+            <div class="col-sm-6 col-md-3 col-lg-3">
+                <div class="team-item">
+                    <div class="team-item-image">
+                        <img alt="" src="/static/cristian-westfal.jpg">
+                        <div class="team-item-detail">
+                            <h4 class="team-item-h">Hello &amp; Welcome!</h4>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit lacus, a&nbsp;iaculis diam.</p>
+                            <div class="team-social-links">
+                                <a target="_blank" href="#"><i class="fa fa-facebook"></i></a>
+                                <a target="_blank" href="#"><i class="fa fa-twitter"></i></a>
+                                <a target="_blank" href="#"><i class="fa fa-pinterest"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="team-item-descr">
+                        <div class="team-item-name">Thomas Rhythm</div>
+                        <div class="team-item-role">Art Director</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+{% endblock %}
