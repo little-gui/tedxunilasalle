@@ -224,3 +224,8 @@ p {
 .team-item:hover .team-item .team-social-links a:hover {
     color: rgba(0, 0, 0, 0.75);
 }
+
+#equipe > .col-md-2,
+#equipe > .col-lg-2 {
+    width: 20%;
+}
