@@ -18,7 +18,7 @@ p {
 }
 
 .border {
-    background-color: #c86868;
+    background-color: #ed3624;
     width: 100%;
     height: 100%;
 }
@@ -101,10 +101,11 @@ p {
 
 #noticias > .row > .col-md-6 + .col-md-6 {
     padding: 0 0 0 15px;
+    margin: -10px 0 0;
 }
 
 #noticias .table {
-    height: 400px;
+    height: 395px;
 }
 
 #noticias .table .col-md-6 {
@@ -113,7 +114,7 @@ p {
 
 #noticias .smaller {
     height: 203px;
-    padding: 5px;
+    padding: 10px 5px 0;
 }
 
 #parallax {
@@ -130,7 +131,7 @@ p {
 }
 
 .team-item-image {
-    border-bottom: 2px solid #e91e63;
+    border-bottom: 2px solid #ed3624;
     overflow: hidden;
     position: relative;
 }
