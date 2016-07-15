@@ -4,6 +4,44 @@
 <link href="/static/css/home.css" rel="stylesheet">
 {% endblock %}
 
+{% block js %}
+<script type="text/javascript">
+$(function() {
+    var menuTopPosition = $('#menu').position().top,
+        menuHeight = $('#menu').height();
+
+    $('a[href*="#"]:not([href="#"])').click(function() {
+        if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+            var target = $(this.hash);
+            target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+            if (target.length) {
+                $('html, body').animate({
+                   scrollTop: target.offset().top - menuHeight
+                }, 1000);
+                return false;
+            }
+        }
+    });
+
+    var fixScroll = function() {
+        if ($(window).scrollTop() >= menuTopPosition) {
+            $('#menu').addClass('fixed');
+            $('#porque').css('margin-top', menuHeight);
+        } else {
+            $('#menu').removeClass('fixed');
+            $('#porque').css('margin-top', '');
+        }
+    }
+
+    $(window).scroll(function(e){
+        fixScroll();
+    });
+
+    fixScroll();
+});
+</script>
+{% endblock %}
+
 {% block content %}
 <div class="container-fluid">
     <div id="header">
@@ -19,7 +57,7 @@
             <div class="col-md-12">
                 <ul>
                     <li>
-                        <a href="{% url 'home' %}#inicio">In&iacute;cio</a>
+                        <a href="{% url 'home' %}#header">In&iacute;cio</a>
                     </li>
                     <li>
                         <a href="{% url 'home' %}#noticias">Not&iacute;cias</a>
@@ -52,10 +90,7 @@
 
     <section id="porque">
         <div class="row">
-            <div class="col-md-6">
-                <h1>Em Busca dos Porquês</h1>
-            </div>
-            <div class="col-md-6"></div>
+            <img src="/static/banner_site.jpg" style="width: 100%;">
         </div>
     </section>
 
@@ -94,118 +129,103 @@
     <section id="quemfaz">
         <div class="row">
             <h1>Quem Faz</h1>
-            <div id="equipe" class="col-md-12">
-                <div class="col-sm-6 col-md-2 col-lg-2">
-                    <div class="team-item">
-                        <div class="team-item-image">
-                            <img alt="" src="/static/cristian-westfal.jpg">
-                            <div class="team-item-detail">
-                                <h4 class="team-item-h">Hello &amp; Welcome!</h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit lacus, a&nbsp;iaculis diam.</p>
-                                <div class="team-social-links">
-                                    <a target="_blank" href="#"><i class="fa fa-facebook"></i></a>
-                                    <a target="_blank" href="#"><i class="fa fa-twitter"></i></a>
-                                    <a target="_blank" href="#"><i class="fa fa-pinterest"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="team-item-descr">
-                            <div class="team-item-name">Cristian Westfal</div>
-                            <div class="team-item-role">Curador</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-md-2 col-lg-2">
-                    <div class="team-item">
-                        <div class="team-item-image">
-                            <img alt="" src="/static/cristian-westfal.jpg">
-                            <div class="team-item-detail">
-                                <h4 class="team-item-h">Hello &amp; Welcome!</h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit lacus, a&nbsp;iaculis diam.</p>
-                                <div class="team-social-links">
-                                    <a target="_blank" href="#"><i class="fa fa-facebook"></i></a>
-                                    <a target="_blank" href="#"><i class="fa fa-twitter"></i></a>
-                                    <a target="_blank" href="#"><i class="fa fa-pinterest"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="team-item-descr">
-                            <div class="team-item-name">Tais</div>
-                            <div class="team-item-role">Curador</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-md-2 col-lg-2">
-                    <div class="team-item">
-                        <div class="team-item-image">
-                            <img alt="" src="/static/cristian-westfal.jpg">
-                            <div class="team-item-detail">
-                                <h4 class="team-item-h">Hello &amp; Welcome!</h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit lacus, a&nbsp;iaculis diam.</p>
-                                <div class="team-social-links">
-                                    <a target="_blank" href="#"><i class="fa fa-facebook"></i></a>
-                                    <a target="_blank" href="#"><i class="fa fa-twitter"></i></a>
-                                    <a target="_blank" href="#"><i class="fa fa-pinterest"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="team-item-descr">
-                            <div class="team-item-name">Ariel</div>
-                            <div class="team-item-role">Curador</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-md-2 col-lg-2">
-                    <div class="team-item">
-                        <div class="team-item-image">
-                            <img alt="" src="/static/cristian-westfal.jpg">
-                            <div class="team-item-detail">
-                                <h4 class="team-item-h">Hello &amp; Welcome!</h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit lacus, a&nbsp;iaculis diam.</p>
-                                <div class="team-social-links">
-                                    <a target="_blank" href="#"><i class="fa fa-facebook"></i></a>
-                                    <a target="_blank" href="#"><i class="fa fa-twitter"></i></a>
-                                    <a target="_blank" href="#"><i class="fa fa-pinterest"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="team-item-descr">
-                            <div class="team-item-name">Pamela</div>
-                            <div class="team-item-role">Curador</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-6 col-md-2 col-lg-2">
-                    <div class="team-item">
-                        <div class="team-item-image">
-                            <img alt="" src="/static/cristian-westfal.jpg">
-                            <div class="team-item-detail">
-                                <h4 class="team-item-h">Hello &amp; Welcome!</h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit lacus, a&nbsp;iaculis diam.</p>
-                                <div class="team-social-links">
-                                    <a target="_blank" href="#"><i class="fa fa-facebook"></i></a>
-                                    <a target="_blank" href="#"><i class="fa fa-twitter"></i></a>
-                                    <a target="_blank" href="#"><i class="fa fa-pinterest"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="team-item-descr">
-                            <div class="team-item-name">Gabriela</div>
-                            <div class="team-item-role">Designer</div>
-                        </div>
-                    </div>
+            <div class="col-md-12">
+                <div class="col-md-10 col-md-offset-1">
+                    <img src="/static/foto_equipe.jpg" style="width: 100%;">
                 </div>
             </div>
             <p>
                 O TedxUnilasalleCanoas é feito por pessoas curiosas, que buscam os
                 porquês das coisas.
+                <br>Cristian Westfal - Curador
+                <br>Tais
+                <br>Ariel
+                <br>Pamela
+                <br>Gabriela
             </p>
         </div>
     </section>
+
+    <section id="programacao">
+        <div class="row">
+            <h1>Programa&ccedil;&atilde;o</h1>
+        </div>
+    </section>
+
+    <section id="local">
+        <div class="row">
+            <div class="col-md-6">
+                <h1>Local</h1>
+                <dl class="dl-horizontal">
+                    <p>Data: S&aacute;bado, 24 de setembro de 2016</p>
+                    <p>Local: Unilasalle Canoas; Av. Vitor Barreto, 2288 - Centro, Canoas - RS</p>
+                    <p>Credenciamento: 8h</p>
+                    <p>Horário: Das 9h às 15h</p>
+                </dl>
+            </div>
+            <div class="col-md-6" style="padding-top: 15px;">
+                <iframe width="100%" height="400" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJtxDDYHVwGZURiwpa8yvTZ04&key=AIzaSyCLJ4n2WsnfrO0dSsgpx4pmqy0ar-TZV-w" allowfullscreen></iframe>
+                <p>Acesso fácil pela estação Canoas do Trensurb</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="tedetedx">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>TED e TEDx</h1>
+            </div>
+            <div class="col-md-6">
+                <h2>O que &eacute; TED</h2>
+                <p>O TED é uma organização sem fins lucrativos, criado em 1984, dedicada a espalhar boas ideias. No TED, grandes pensadores são convidados a falar sobre suas experiências e essas conferências são disponibilizadas no site TED.com</p>
+            </div>
+            <div class="col-md-6">
+                <h2>O que &eacute; TEDx</h2>
+                <p>No espírito "vale a pena espalhar ideias", o TEDx é um evento local, auto-organizado, com o intuito de reunir pessoas para partilhar experiências. As conferências buscam provocar uma discussão profunda sobre os temas apresentados.</p>
+            </div>
+            <div class="col-md-6">
+                <h2>TEDxUnilasalleCanoas</h2>
+                <p>O TEDxUnilasalleCanoas trata da “Busca dos Porquês”, por que o caminho para o conhecimento sempre começa questionando, por que as coisas são como são?</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="apoio">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>Apoio</h1>
+            </div>
+            <div class="col-md-6">
+                <img class="img-responsive" src="/static/logo_lasalle.png">
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="row">
+            <div class="table">
+                <div class="col-md-4">
+                    <img class="img-responsive" src="/static/logo_TEDx.png">
+                </div>
+                <div class="col-md-4 socials">
+                    <a href="#" class="col-md-3">
+                        <img class="img-responsive" src="/static/social_email.png">
+                    </a>
+                    <a href="#" class="col-md-3">
+                        <img class="img-responsive" src="/static/social_facebook.png">
+                    </a>
+                    <a href="#" class="col-md-3">
+                        <img class="img-responsive" src="/static/social_instagram.png">
+                    </a>
+                    <a href="#" class="col-md-3">
+                        <img class="img-responsive" src="/static/social_twitter.png">
+                    </a>
+                </div>
+                <div class="col-md-4">
+                    <p>Este evento não está sendo organizado pelo TED conferences</p>
+                </div>
+            </div>
+        </div>
+    </footer>
 </div>
 {% endblock %}
