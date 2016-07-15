@@ -1,0 +1,80 @@
+h1 {
+    font-size: 50pt;
+}
+
+h2 {
+    font-size: 46pt;
+}
+
+body, p {
+    font-size: 36pt;
+}
+
+.table {
+    display: table;
+    width: 100%;
+    margin-bottom: 0;
+}
+
+.table > * {
+    display: table-cell;
+    vertical-align: middle;
+    float: none;
+}
+
+.border {
+    background-color: #ed3624;
+    width: 100%;
+    height: 100%;
+}
+
+section > .row {
+    padding: 0 40px;
+}
+
+#header .row {
+    background-color: #000000;
+}
+
+#header .row img {
+    padding: 25px 0 25px 40px;
+}
+
+#menu.fixed {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 999;
+}
+
+#menu .row {
+    background-color: #b3b3b3;
+}
+
+#menu ul {
+    padding: 0 0 0 40px;
+}
+
+#menu ul li {
+    list-style-type: none;
+    float: left;
+}
+
+#menu ul li + li {
+    padding-left: 40px;
+}
+
+#menu ul li a {
+    font-size: 26pt;
+    font-size: 1.4vw;
+    line-height: 65px;
+    line-height: 4vw;
+    color: #000000;
+    -webkit-transition: color 0.2s;
+            transition: color 0.2s;
+}
+
+#menu ul li a:hover {
+    color: #444444;
+    text-decoration: none;
+}
