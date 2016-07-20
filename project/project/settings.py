@@ -135,3 +135,8 @@ EMAIL_HOST_USER = 'tedxunilasallecanoas@gmail.com'
 EMAIL_HOST_PASSWORD = 'test'
 EMAIL_PORT = 587
 
+
+try:
+    from local_settings import *
+except:
+    pass
