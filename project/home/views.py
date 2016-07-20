@@ -14,7 +14,7 @@ def contact(request):
         send_mail(
             '[TEDxUnilasalleCanoas] %s <%s>' % (request.POST.get('name'), request.POST.get('email')),
             request.POST.get('message'),
-            settings.EMAIL_DEFAULT_TO,
+            settings.EMAIL_DEFAULT_FROM,
             [settings.EMAIL_DEFAULT_TO],
             fail_silently=True
         )

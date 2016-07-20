@@ -1,13 +1,13 @@
 h1 {
-    font-size: 50pt;
+    font-size: 40pt;
 }
 
 h2 {
-    font-size: 46pt;
+    font-size: 36pt;
 }
 
 body, p {
-    font-size: 36pt;
+    font-size: 26pt;
 }
 
 .table {
@@ -66,9 +66,9 @@ section > .row {
 
 #menu ul li a {
     font-size: 26pt;
-    font-size: 1.4vw;
+    font-size: 1.6vw;
     line-height: 65px;
-    line-height: 4vw;
+    line-height: 5vw;
     color: #000000;
     -webkit-transition: color 0.2s;
             transition: color 0.2s;

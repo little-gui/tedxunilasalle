@@ -61,7 +61,7 @@
 }
 
 #parallax .background-image {
-    background: transparent url("../parallax.jpg") no-repeat fixed center center / 100% auto;
+    background: transparent url("../parallax.jpg") no-repeat fixed center center / 120% auto;
     height: 400px;
 }
 

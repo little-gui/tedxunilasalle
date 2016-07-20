@@ -127,6 +127,7 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
 ]
 
+EMAIL_DEFAULT_FROM = 'tedxunilasallecanoas@gmail.com'
 EMAIL_DEFAULT_TO = 'tedxunilasallecanoas@gmail.com'
 EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com'

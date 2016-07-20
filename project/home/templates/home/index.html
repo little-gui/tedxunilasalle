@@ -23,6 +23,12 @@ $(function() {
         }
     });
 
+    if ($(window.location.hash).length) {
+        $('html, body').animate({
+           scrollTop: $(window.location.hash).offset().top - menuHeight
+        }, 1000);
+    }
+
     var fixScroll = function() {
         if ($(window).scrollTop() >= menuTopPosition) {
             $('#menu').addClass('fixed');
@@ -164,7 +170,9 @@ $(function() {
         <div class="row">
             <div class="table">
                 <div class="col-md-4">
-                    <img class="img-responsive" src="/static/logo_TEDx.png">
+                    <div class="col-md-9">
+                        <img class="img-responsive" src="/static/logo_TEDx.png">
+                    </div>
                 </div>
                 <div class="col-md-4 socials">
                     <a href="#" class="col-md-3">
