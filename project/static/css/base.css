@@ -1,5 +1,6 @@
 h1 {
     font-size: 40pt;
+    color: #000;
 }
 
 h2 {
@@ -8,6 +9,7 @@ h2 {
 
 body, p {
     font-size: 26pt;
+    color: #000;
 }
 
 .table {

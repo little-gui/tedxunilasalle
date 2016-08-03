@@ -145,6 +145,11 @@
     padding: 0;
 }
 
+#local p,
+#local h1 {
+    color: #fff;
+}
+
 #local .row {
     padding: 0 40px;
     color: #ffffff;
@@ -163,6 +168,10 @@
 
 #tedetedx h2 {
     margin: 30px 0 20px;
+}
+
+#tedetedx .row .col-md-6 {
+    float: left;
 }
 
 #apoio {
@@ -194,4 +203,15 @@ footer p {
     color: #ffffff;
     font-size: 1.4vw;
     margin-bottom: 0;
+}
+
+
+@media screen and (min-width: 800px) {
+    #tedetedx .row .col-md-6:nth-child(even) {
+        padding-left: 40px;
+    }
+
+    #tedetedx .row .col-md-6:nth-child(odd) {
+        padding-right: 40px;
+    }
 }
