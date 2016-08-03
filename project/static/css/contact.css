@@ -530,7 +530,7 @@ a.btn-mod:focus{
 .btn-mod.btn-color:hover,
 .btn-mod.btn-color:focus{
     color: #fff;
-    background: #e91e63;
+    background: #000;
     opacity: .85;
 }
 

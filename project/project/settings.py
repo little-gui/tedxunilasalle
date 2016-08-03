@@ -40,6 +40,7 @@ INSTALLED_APPS = [
 
     'project',
     'home',
+    'blog',
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -122,6 +123,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
 
 STATIC_URL = '/static/'
+
+MEDIA_ROOT = os.path.join(BASE_DIR, "static/upload")
+MEDIA_URL = '/static/upload/'
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),

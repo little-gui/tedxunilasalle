@@ -8,25 +8,26 @@ from django.utils.translation import ugettext_lazy as _
 
 class Post(models.Model):
     title = models.CharField(max_length=200, verbose_name=_("Titulo"))
-    slug = models.SlugField()
+    slug = models.SlugField(null=True, blank=True)
     bodytext = models.TextField(verbose_name=_("Mensagem"))
 
     post_date = models.DateTimeField(
         auto_now_add=True, verbose_name=_("Postar em"))
-    modified = models.DateTimeField(null=True, verbose_name=_("Modificado"))
+    modified = models.DateTimeField(null=True, blank=True, verbose_name=_("Modificado"))
     posted_by = models.ForeignKey(settings.AUTH_USER_MODEL, verbose_name=_("Postado por"))
 
     allow_comments = models.BooleanField(
         default=True, verbose_name=_("Permite comentários"))
     comment_count = models.IntegerField(
         blank=True, default=0, verbose_name=_('Contagem de comentários'))
+    image = models.ImageField(upload_to='blog/', null=True, blank=True, verbose_name=_('Imagem'))
 
     class Meta:
         verbose_name = _('post')
         verbose_name_plural = _('posts')
         ordering = ['-post_date']
 
-    def __unicode__(self):
+    def __str__(self):
         return self.title
 
     def get_absolute_url(self):

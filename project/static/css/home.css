@@ -5,6 +5,7 @@
 
 #porque .row {
     background-color: #000000;
+    padding-right: 0;
 }
 
 #porque .col-md-6 {
@@ -26,12 +27,52 @@
     height: 550px;
 }
 
+#noticias .floating {
+    background-color: rgba(0, 0, 0, 0.7);
+    height: 100px;
+    position: absolute;
+    bottom: -130px;
+    width: 100%;
+    display: table;
+    text-align: left;
+    -webkit-transition: bottom 0.4s;
+            transition: bottom 0.4s;
+}
+
+#noticias .size:hover .floating {
+    bottom: 0;
+}
+
+#noticias p {
+    font-size: 20px;
+    text-indent: 20px;
+    color: #f5f5f5;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+#noticias .title {
+    color: #fff;
+    line-height: 35px;
+    display: table-cell;
+    vertical-align: middle;
+    text-indent: 15px;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
 #noticias > .row {
     margin: 0 40px;
 }
 
 #noticias > .row > .col-md-6 {
     padding: 0;
+    position: relative;
+    height: 395px;
 }
 
 #noticias > .row > .col-md-6 + .col-md-6 {
@@ -50,6 +91,12 @@
 #noticias .smaller {
     height: 203px;
     padding: 10px 5px 0;
+}
+
+#noticias .smaller > div {
+    height: 193px;
+    overflow: hidden;
+    position: relative;
 }
 
 #parallax {
@@ -91,7 +138,11 @@
 }
 
 #programacao {
-    height: 600px;
+    /*height: 600px;*/
+}
+
+#programacao .row {
+    padding: 0;
 }
 
 #local .row {
@@ -107,6 +158,11 @@
 
 #tedetedx .col-md-6 p {
     text-align: justify;
+    line-height: 1.56;
+}
+
+#tedetedx h2 {
+    margin: 30px 0 20px;
 }
 
 #apoio {

@@ -32,11 +32,11 @@ section > .row {
     padding: 0 40px;
 }
 
-#header .row {
+#inicio .row {
     background-color: #000000;
 }
 
-#header .row img {
+#inicio .row img {
     padding: 25px 0 25px 40px;
 }
 
@@ -77,4 +77,31 @@ section > .row {
 #menu ul li a:hover {
     color: #444444;
     text-decoration: none;
+}
+
+@media screen and (max-width: 480px) {
+    #menu .col-md-12 {
+        padding: 0;
+    }
+    
+    #menu ul {
+        padding: 0;
+    }
+
+    #menu ul li {
+        width: 100%;
+    }
+
+    #menu ul li + li {
+        padding: 0;
+    }
+
+    #menu ul li a {
+        display: block;
+        font-size: 20px;
+        line-height: normal;
+        padding: 5px 0 15px;
+        width: 100%;
+        text-align: center;
+    }
 }

@@ -30,12 +30,14 @@ $(function() {
     }
 
     var fixScroll = function() {
-        if ($(window).scrollTop() >= menuTopPosition) {
-            $('#menu').addClass('fixed');
-            $('#porque').css('margin-top', menuHeight);
-        } else {
-            $('#menu').removeClass('fixed');
-            $('#porque').css('margin-top', '');
+        if ($(window).width() > 480) {
+            if ($(window).scrollTop() >= menuTopPosition) {
+                $('#menu').addClass('fixed');
+                $('#porque').css('margin-top', menuHeight);
+            } else {
+                $('#menu').removeClass('fixed');
+                $('#porque').css('margin-top', '');
+            }
         }
     }
 
@@ -44,6 +46,11 @@ $(function() {
     });
 
     fixScroll();
+
+    $('#noticias p').each(function() {
+        var width = $(this).parents('.size').width();
+        $(this).css('width', width-5);
+    });
 });
 </script>
 {% endblock %}
@@ -59,25 +66,45 @@ $(function() {
     <section id="noticias">
         <div class="row">
             <h1>Not&iacute;cias</h1>
+    {% for post in posts %}
+        {% if forloop.first %}
+                <div class="col-md-6 size" style="overflow: hidden;">
+                    {% if post %}
+                    <a href="#">
+                        <img src="{{ post.image.url }}" style="width: 100%;">
+                        <div class="floating">
+                            <div class="title">
+                                <h2>{{ post.title }}</h2>
+                                <p>{{ post.bodytext }}</p>
+                            </div>
+                        </div>
+                    </a>
+                    {% else %}
+                        <div class="col-md-6"></div>
+                        <div class="col-md-6"></div>
+                    {% endif %}
+                </div>
             <div class="col-md-6">
-                <div class="table border">
-                    <div class="col-md-6"></div>
-                    <div class="col-md-6"></div>
+        {% else %}
+            <div class="col-md-6 smaller">
+                <div class="wrapper size">
+            {% if post %}
+                    <a href="#">
+                        <img src="{{ post.image.url }}" style="width: 100%;">
+                        <div class="floating">
+                            <div class="title">
+                                <h2>{{ post.title }}</h2>
+                                <p>{{ post.bodytext }}</p>
+                            </div>
+                        </div>
+                    </a>
+            {% else %}
+                    <div class="border"></div>
+            {% endif %}
                 </div>
             </div>
-            <div class="col-md-6">
-                <div class="col-md-6 smaller">
-                    <div class="border"></div>
-                </div>
-                <div class="col-md-6 smaller">
-                    <div class="border"></div>
-                </div>
-                <div class="col-md-6 smaller">
-                    <div class="border"></div>
-                </div>
-                <div class="col-md-6 smaller">
-                    <div class="border"></div>
-                </div>
+        {% endif %}
+    {% endfor %}
             </div>
         </div>
     </section>
@@ -97,13 +124,12 @@ $(function() {
                 </div>
             </div>
             <p>
-                O TedxUnilasalleCanoas é feito por pessoas curiosas, que buscam os
-                porquês das coisas.
-                <br>Cristian Westfal - Curador
-                <br>Tais
-                <br>Ariel
-                <br>Pamela
-                <br>Gabriela
+                O TedxUnilasalleCanoas é feito por pessoas curiosas, que buscam os porquês das coisas. Sabem que boas ideias compartilhadas podem mudar o mundo.
+                <br>Cristian Westphal – Curador
+                <br>Taís Oliveira – Gerente de projetos
+                <br>Ariel Vargas Alonso – T&eacute;cnico de projetos
+                <br>P&acirc;mela Fraga – T&eacute;cnica de projetos
+                <br>Gabriela Carvalho – Storyteller designer
             </p>
         </div>
     </section>
@@ -113,7 +139,7 @@ $(function() {
 
     <section id="programacao">
         <div class="row">
-            <h1>Programa&ccedil;&atilde;o</h1>
+            <img src="/static/Em breve.jpg" style="width: 100%;">
         </div>
     </section>
 
