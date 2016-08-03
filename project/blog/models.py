@@ -17,9 +17,9 @@ class Post(models.Model):
     posted_by = models.ForeignKey(settings.AUTH_USER_MODEL, verbose_name=_("Postado por"))
 
     allow_comments = models.BooleanField(
-        default=True, verbose_name=_("Permite comentários"))
+        default=True, verbose_name=_("Permite comentarios"))
     comment_count = models.IntegerField(
-        blank=True, default=0, verbose_name=_('Contagem de comentários'))
+        blank=True, default=0, verbose_name=_('Contagem de comentarios'))
     image = models.ImageField(upload_to='blog/', null=True, blank=True, verbose_name=_('Imagem'))
 
     class Meta:
@@ -49,17 +49,17 @@ class Comment(models.Model):
     post_date = models.DateTimeField(
         auto_now_add=True, verbose_name=_("Postar em"))
     ip_address = models.GenericIPAddressField(
-        default='0.0.0.0', verbose_name=_("Endereço IP"))
+        default='0.0.0.0', verbose_name=_("Endereco IP"))
 
     user = models.ForeignKey(
-        settings.AUTH_USER_MODEL, null=True, blank=True, verbose_name=_("Usuário"), related_name='comment_user')
+        settings.AUTH_USER_MODEL, null=True, blank=True, verbose_name=_("Usuario"), related_name='comment_user')
     user_name = models.CharField(
-        max_length=50, default='anonymous', verbose_name=_("Nome de usuário"))
-    user_email = models.EmailField(blank=True, verbose_name=_("E-mail do usuário"))
+        max_length=50, default='anonymous', verbose_name=_("Nome de usuario"))
+    user_email = models.EmailField(blank=True, verbose_name=_("E-mail do usuario"))
 
     class Meta:
-        verbose_name = _('Comentário')
-        verbose_name_plural = _('Comentários')
+        verbose_name = _('Comentario')
+        verbose_name_plural = _('Comentarios')
         ordering = ['post_date']
 
 from blog.signals import save_comment
