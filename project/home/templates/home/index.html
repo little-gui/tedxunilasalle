@@ -71,7 +71,11 @@ $(function() {
                 <div class="col-md-6 size" style="overflow: hidden;">
                     {% if post %}
                     <a href="#">
+                        {% if post.image %}
                         <img src="{{ post.image.url }}" style="width: 100%;">
+                        {% else %}
+                        <div class="border"></div>
+                        {% endif %}
                         <div class="floating">
                             <div class="title">
                                 <h2>{{ post.title }}</h2>

@@ -1,12 +1,13 @@
 from django.conf import settings
 from django.core.mail import send_mail
 from django.shortcuts import render
+from django.utils import timezone
 
 from blog.models import Post
 
 
 def index(request):
-    posts = list(Post.objects.all()[:5])
+    posts = list(Post.objects.filter(post_date__lte=timezone.now())[:5])
     posts_count = len(posts)
     for i in range(posts_count+1, 6):
         posts.append('')
