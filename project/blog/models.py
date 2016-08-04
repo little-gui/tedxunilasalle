@@ -10,7 +10,7 @@ class Post(models.Model):
     title = models.CharField(max_length=200, verbose_name=_("Titulo"))
     slug = models.SlugField(null=True, blank=True)
     subtitle = models.CharField(max_length=255, verbose_name=_("Sub-titulo"), default="")
-    bodytext = models.TextField(verbose_name=_("Mensagem"), default="")
+    bodytext = models.TextField(verbose_name=_("Mensagem"), blank=True, default="")
 
     post_date = models.DateTimeField(verbose_name=_("Postar em"))
     modified = models.DateTimeField(null=True, blank=True, verbose_name=_("Modificado"))
