@@ -12,8 +12,7 @@ class Post(models.Model):
     subtitle = models.CharField(max_length=255, verbose_name=_("Sub-titulo"), default="")
     bodytext = models.TextField(verbose_name=_("Mensagem"), default="")
 
-    post_date = models.DateTimeField(
-        auto_now_add=True, verbose_name=_("Postar em"))
+    post_date = models.DateTimeField(verbose_name=_("Postar em"))
     modified = models.DateTimeField(null=True, blank=True, verbose_name=_("Modificado"))
     posted_by = models.ForeignKey(settings.AUTH_USER_MODEL, verbose_name=_("Postado por"))
 
