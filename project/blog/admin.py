@@ -5,7 +5,7 @@ from blog.models import Post, Comment
 
 class PostAdmin(admin.ModelAdmin):
     fields = ('posted_by', 'post_date', 'title', 'subtitle', 'bodytext', 'image', 'allow_comments')
-    list_display = ('title', 'posted_by', 'comment_count', 'allow_comments')
+    list_display = ('title', 'subtitle', 'posted_by', 'comment_count', 'allow_comments')
 
 
 class CommentAdmin(admin.ModelAdmin):
