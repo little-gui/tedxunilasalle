@@ -20,7 +20,7 @@ class Post(models.Model):
         default=True, verbose_name=_("Permite comentarios"))
     comment_count = models.IntegerField(
         blank=True, default=0, verbose_name=_('Contagem de comentarios'))
-    image = models.ImageField(upload_to='blog/', verbose_name=_('Imagem'))
+    image = models.ImageField(upload_to='blog/', null=True, blank=True, verbose_name=_('Imagem'))
 
     class Meta:
         verbose_name = _('post')
