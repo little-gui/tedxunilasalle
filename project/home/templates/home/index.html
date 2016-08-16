@@ -93,7 +93,7 @@ $(function() {
             <div class="col-md-6 smaller">
                 <div class="wrapper size">
             {% if post %}
-                    <a href="#">
+                    <a href="{% url 'blog_post' post_id=post.id slug=post.slug %}">
                         <img src="{{ post.image.url }}" style="width: 100%;">
                         <div class="floating">
                             <div class="title">
