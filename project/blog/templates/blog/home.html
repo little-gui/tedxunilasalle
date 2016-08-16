@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="col-md-8">
+    {% for post in posts %}
+        <h2 style="margin-bottom: 0;">{{ post.title }}</h2>
+        <p style="line-height: normal;">
+            <small style="opacity: 0.7;">{{ post.subtitle }}</small>
+        </p>
+        {% if post.image %}
+        <div class="col-md-12" style="text-align: center;">
+            <img src="{{ post.image.url }}" style="max-height: 300px;">
+        </div>
+        {% endif %}
+        <div>
+            {{ post.bodytext|truncatewords_html:50 }}
+            <a href="{% url 'blog_post' post_id=post.id %}">continue lendo</a>
+        </div>
+        <hr>
+    {% endfor %}
+    </div>
+{% endblock %}

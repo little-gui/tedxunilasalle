@@ -22,6 +22,7 @@ from django.views import static
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^', include('home.urls')),
+    url(r'^blog/', include('blog.urls')),
 
     url(r'^(?P<path>.*)$', static.serve, {'document_root': settings.BASE_DIR, 'show_indexes': True})
 ]
