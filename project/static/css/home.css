@@ -44,7 +44,7 @@
 }
 
 #noticias p {
-    font-size: 20px;
+    font-size: 18px;
     text-indent: 20px;
     color: #f5f5f5;
 
@@ -55,7 +55,7 @@
 
 #noticias .title {
     color: #fff;
-    line-height: 35px;
+    line-height: 20px;
     display: table-cell;
     vertical-align: middle;
     text-indent: 15px;
