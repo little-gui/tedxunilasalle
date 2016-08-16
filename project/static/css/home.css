@@ -175,7 +175,7 @@
 }
 
 #apoio {
-    max-height: 285px;
+    min-height: 285px;
 }
 
 #apoio .row {
