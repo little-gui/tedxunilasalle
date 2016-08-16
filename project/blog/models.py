@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 from django.db import models
-from django.db.models.signals import post_save
+from django.db.models.signals import post_save, pre_save
 from django.core.urlresolvers import reverse
 from django.conf import settings
 from django.utils.translation import ugettext_lazy as _
@@ -62,6 +62,8 @@ class Comment(models.Model):
         verbose_name_plural = _('Comentarios')
         ordering = ['post_date']
 
-from blog.signals import save_comment
+
+from blog.signals import save_comment, save_slug
 
 post_save.connect(save_comment, sender=Comment)
+pre_save.connect(save_slug, sender=Post)

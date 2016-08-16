@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="col-md-8">
+        <h2 style="margin-bottom: 0;">{{ post.title }}</h2>
+        <p style="line-height: normal;">
+            <small style="opacity: 0.7;">{{ post.subtitle }}</small>
+        </p>
+        {% if post.image %}
+        <div class="col-md-12" style="text-align: center; margin-bottom: 20px;">
+            <img src="{{ post.image.url }}" style="max-height: 600px;">
+        </div>
+        {% endif %}
+        <div>
+            {{ post.bodytext }}
+        </div>
+    </div>
+{% endblock %}

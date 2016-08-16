@@ -14,7 +14,7 @@
         {% endif %}
         <div>
             {{ post.bodytext|truncatewords_html:50 }}
-            <a href="{% url 'blog_post' post_id=post.id %}">continue lendo</a>
+            <a href="{% url 'blog_post' post_id=post.id slug=post.slug %}">continue lendo</a>
         </div>
         <hr>
     {% endfor %}

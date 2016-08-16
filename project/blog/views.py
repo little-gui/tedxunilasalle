@@ -15,5 +15,6 @@ def home(request, page=1):
     return render(request, 'blog/home.html', {'posts': posts})
 
 
-def post(request, post_id):
-    return render(request)
+def post(request, post_id, slug):
+    post = Post.objects.get(id=post_id)
+    return render(request, 'blog/post.html', {'post': post})
