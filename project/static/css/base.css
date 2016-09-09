@@ -1,14 +1,14 @@
 h1 {
-    font-size: 40pt;
+    font-size: 36pt;
     color: #000;
 }
 
 h2 {
-    font-size: 24pt;
+    font-size: 20pt;
 }
 
 body, p {
-    font-size: 26pt;
+    font-size: 18pt;
     color: #000;
 }
 
@@ -67,8 +67,7 @@ section > .row {
 }
 
 #menu ul li a {
-    font-size: 26pt;
-    font-size: 1.6vw;
+    font-size: 22pt;
     line-height: 65px;
     line-height: 5vw;
     color: #000000;
